@@ -20,6 +20,7 @@ internal class PlaylistController
     {
         using var request = new HttpRequestMessage(HttpMethod.Post, "https://www.youtube.com/youtubei/v1/browse")
         {
+<<<<<<< HEAD
             Content = new StringContent(
                 $$"""
                 {
@@ -36,6 +37,22 @@ internal class PlaylistController
                 }
                 """
             )
+=======
+            // ReSharper disable VariableHidesOuterVariable
+            Content = new StringContent(Json.Create(x => x.Object(x => x
+                .Property("browseId", x => x.String("VL" + playlistId))
+                .Property("context", x => x.Object(x => x
+                    .Property("client", x => x.Object(x => x
+                        .Property("clientName", x => x.String("WEB"))
+                        .Property("clientVersion", x => x.String("2.20210408.08.00"))
+                        .Property("hl", x => x.String("en"))
+                        .Property("gl", x => x.String("US"))
+                        .Property("utcOffsetMinutes", x => x.Number(0))
+                    ))
+                ))
+            )))
+            // ReSharper restore VariableHidesOuterVariable
+>>>>>>> 25239e8 (Avoid reflection in serialization)
         };
 
         using var response = await _http.SendAsync(request, cancellationToken);
@@ -63,6 +80,7 @@ internal class PlaylistController
         {
             using var request = new HttpRequestMessage(HttpMethod.Post, "https://www.youtube.com/youtubei/v1/next")
             {
+<<<<<<< HEAD
                 Content = new StringContent(
                     $$"""
                     {
@@ -82,6 +100,25 @@ internal class PlaylistController
                     }
                     """
                 )
+=======
+                // ReSharper disable VariableHidesOuterVariable
+                Content = new StringContent(Json.Create(x => x.Object(x => x
+                    .Property("playlistId", x => x.String(playlistId))
+                    .Property("videoId", x => x.String(videoId?.Value))
+                    .Property("playlistIndex", x => x.Number(index))
+                    .Property("context", x => x.Object(x => x
+                        .Property("client", x => x.Object(x => x
+                            .Property("clientName", x => x.String("WEB"))
+                            .Property("clientVersion", x => x.String("2.20210408.08.00"))
+                            .Property("hl", x => x.String("en"))
+                            .Property("gl", x => x.String("US"))
+                            .Property("utcOffsetMinutes", x => x.Number(0))
+                            .Property("visitorData", x => x.String(visitorData))
+                        ))
+                    ))
+                )))
+                // ReSharper restore VariableHidesOuterVariable
+>>>>>>> 25239e8 (Avoid reflection in serialization)
             };
 
             using var response = await _http.SendAsync(request, cancellationToken);
