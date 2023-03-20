@@ -47,6 +47,9 @@ internal class VideoController
         using var request = new HttpRequestMessage(HttpMethod.Post, "https://www.youtube.com/youtubei/v1/player")
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 389bf3b (Simplify JSON formatting)
             Content = new StringContent(
                 $$"""
                 {
@@ -64,6 +67,7 @@ internal class VideoController
                 }
                 """
             )
+<<<<<<< HEAD
 =======
             // ReSharper disable VariableHidesOuterVariable
             Content = new StringContent(Json.Create(x => x.Object(x => x
@@ -81,6 +85,8 @@ internal class VideoController
             )))
             // ReSharper restore VariableHidesOuterVariable
 >>>>>>> 25239e8 (Avoid reflection in serialization)
+=======
+>>>>>>> 389bf3b (Simplify JSON formatting)
         };
 
         // User agent appears to be sometimes required when impersonating Android
@@ -111,6 +117,9 @@ internal class VideoController
         using var request = new HttpRequestMessage(HttpMethod.Post, "https://www.youtube.com/youtubei/v1/player")
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 389bf3b (Simplify JSON formatting)
             Content = new StringContent(
                 $$"""
                 {
@@ -135,6 +144,7 @@ internal class VideoController
                 }
                 """
             )
+<<<<<<< HEAD
 =======
             // ReSharper disable VariableHidesOuterVariable
             Content = new StringContent(Json.Create(x => x.Object(x => x
@@ -159,6 +169,8 @@ internal class VideoController
             )))
             // ReSharper restore VariableHidesOuterVariable
 >>>>>>> 25239e8 (Avoid reflection in serialization)
+=======
+>>>>>>> 389bf3b (Simplify JSON formatting)
         };
 
         using var response = await Http.SendAsync(request, cancellationToken);

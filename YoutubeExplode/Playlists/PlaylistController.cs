@@ -21,6 +21,9 @@ internal class PlaylistController
         using var request = new HttpRequestMessage(HttpMethod.Post, "https://www.youtube.com/youtubei/v1/browse")
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 389bf3b (Simplify JSON formatting)
             Content = new StringContent(
                 $$"""
                 {
@@ -37,6 +40,7 @@ internal class PlaylistController
                 }
                 """
             )
+<<<<<<< HEAD
 =======
             // ReSharper disable VariableHidesOuterVariable
             Content = new StringContent(Json.Create(x => x.Object(x => x
@@ -53,6 +57,8 @@ internal class PlaylistController
             )))
             // ReSharper restore VariableHidesOuterVariable
 >>>>>>> 25239e8 (Avoid reflection in serialization)
+=======
+>>>>>>> 389bf3b (Simplify JSON formatting)
         };
 
         using var response = await _http.SendAsync(request, cancellationToken);
@@ -81,6 +87,9 @@ internal class PlaylistController
             using var request = new HttpRequestMessage(HttpMethod.Post, "https://www.youtube.com/youtubei/v1/next")
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 389bf3b (Simplify JSON formatting)
                 Content = new StringContent(
                     $$"""
                     {
@@ -100,6 +109,7 @@ internal class PlaylistController
                     }
                     """
                 )
+<<<<<<< HEAD
 =======
                 // ReSharper disable VariableHidesOuterVariable
                 Content = new StringContent(Json.Create(x => x.Object(x => x
@@ -119,6 +129,8 @@ internal class PlaylistController
                 )))
                 // ReSharper restore VariableHidesOuterVariable
 >>>>>>> 25239e8 (Avoid reflection in serialization)
+=======
+>>>>>>> 389bf3b (Simplify JSON formatting)
             };
 
             using var response = await _http.SendAsync(request, cancellationToken);

@@ -1,8 +1,11 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 using System;
 using System.IO;
 >>>>>>> 25239e8 (Avoid reflection in serialization)
+=======
+>>>>>>> 389bf3b (Simplify JSON formatting)
 using System.Text;
 using System.Text.Json;
 
@@ -10,18 +13,6 @@ namespace YoutubeExplode.Utils;
 
 internal static class Json
 {
-    public static string Create(Action<JsonWriter> write)
-    {
-        using var stream = new MemoryStream();
-        using var writer = new Utf8JsonWriter(stream);
-
-        var objectWriter = new JsonWriter(writer);
-        write(objectWriter);
-
-        writer.Flush();
-        return Encoding.UTF8.GetString(stream.ToArray());
-    }
-
     public static string Extract(string source)
     {
         var buffer = new StringBuilder();
