@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-using System;
-using System.IO;
->>>>>>> 25239e8 (Avoid reflection in serialization)
-=======
->>>>>>> 389bf3b (Simplify JSON formatting)
 using System.Text;
 using System.Text.Json;
 
